@@ -1,0 +1,626 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    max-width: 1440px;
+    overflow: hidden;
+    margin: 0 auto;
+    color: white;
+
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    background: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#hideDesktop {
+    display: block;
+}
+
+#mobile {
+    display: none;
+}
+
+/***** Left Elements *****/
+.left {
+    position: relative;
+    background-color: #4E27CE;
+    padding-left: 40px;
+}
+
+#left-infos {
+    position: relative;
+    top: 50px;
+
+}
+
+
+h1 {
+    font-size: 3em;
+    font-weight: 600;
+
+}
+
+.p-width {
+    width: 70%;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+#action {
+    position: relative;
+    top: 80px;
+    width: 90%;
+}
+
+.top-container {
+    position: relative;
+    top: 30px;
+    height: 300px;
+    width: 100%;
+}
+
+.path-text {
+    position: relative;
+    top: 20px;
+    z-index: 11;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+#title {
+    text-align: left;
+}
+
+.cont {
+    width: 100%;
+    display: grid;
+    place-content: end;
+}
+
+.top-container svg {
+    position: absolute;
+    right: -20%;
+    z-index: 10;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #4E27CE;
+}
+
+.dots-nav {
+    opacity: 0.5;
+}
+
+#Dots1 {
+    opacity: 1;
+}
+
+/***** Right Elements *******/
+.right {
+    background-color: #1D0363;
+}
+
+#right-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.east-asia-images,
+.headline2-images,
+.ux-images,
+.nasa-images,
+.blockchain-images,
+.downloads-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -10%;
+    visibility: hidden;
+}
+/* East-asia-images  */
+.east-1 {
+    position: absolute;
+    width: 300px;
+    bottom: -30px;
+    z-index: 2;
+}
+
+.east-2 {
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    right: 8%;
+}
+
+
+/* BlockChain Images */
+
+.blockchain-1 {
+    position: absolute;
+    width: 300px;
+    bottom: -30px;
+    z-index: 2;
+    left: 18%;
+
+}
+
+.blockchain-2 {
+    position: absolute;
+    width: 250px;
+    top: -20%;
+    right: 2%;
+}
+
+
+/*Downloads Images */
+.download-1,
+.download-2 {
+    width: 300px;
+}
+
+
+/* Nasa Images */
+.nasa-1 {
+    position: absolute;
+    width: 300px;
+    z-index: 2;
+    left: 18%;
+}
+
+.nasa-2 {
+    position: absolute;
+    width: 250px;
+    top: -30%;
+    right: 2%;
+}
+#nasa-image {
+    width: 250px;
+}
+
+/* UX Images  */
+.ux-1 {
+    position: absolute;
+    width: 250px;
+    bottom: -1%;
+    left: 11%;
+}
+
+.ux-2 {
+    position: absolute;
+    width: 200px;
+    right: 20%;
+    top: -1%;
+}
+
+.ux-3 {
+    position: absolute;
+    width: 300px;
+    top: -10%;
+    left: 0;
+}
+
+.ux-4 {
+    position: absolute;
+    top: -30%;
+    right: 5%;
+}
+
+.ux-5 {
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+}
+
+
+/* Headline Images  */
+
+.headline-images {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.headline-1 {
+    width: 100%;
+    height: 100%;
+}
+
+.headline-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 77;
+}
+
+/* Text Headline */
+.h1 {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    left: 12%;
+}
+
+.h2 {
+    position: absolute;
+    width: 200px;
+
+    top: -30%;
+    left: 15%;
+}
+
+.h3 {
+    position: absolute;
+    width: 200px;
+
+    bottom: -10%;
+    left: 40%;
+}
+
+.h4 {
+    position: absolute;
+    width: 200px;
+
+    bottom: 30%;
+    left: 70%;
+}
+
+.h5 {
+    position: absolute;
+    width: 200px;
+
+    top: -11%;
+    left: 40%;
+}
+
+/************ Media Queries ********/
+
+
+@media only screen and (max-width:600px) {
+
+    .main {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        height: 100vh;
+        width: 100vw;
+
+    }
+
+    .left {
+        grid-row: 2;
+        position: relative;
+        z-index: 10 !important;
+        overflow: hidden;
+
+    }
+
+    .right {
+        position: relative;
+        grid-row: 1;
+        z-index: 0 !important;
+        overflow: hidden;
+
+    }
+
+    #hideDesktop {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    #right-image {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .east-asia-images,
+    .headline2-images,
+    .ux-images,
+    .nasa-images,
+    .blockchain-images,
+    .downloads-images {
+        visibility: visible;
+
+    }
+/* East asia images  */
+    .east-1 {
+        position: absolute;
+        width: 200px !important;
+        bottom: 12%;
+        left: 5%;
+    }
+
+    .east-2 {
+        position: absolute;
+        width: 150px !important;
+        bottom: 12%;
+        left: 50%;
+    }
+
+
+
+    /* BlockChain Images */
+
+    .blockchain-1 {
+        position: absolute;
+        width: 180px !important;
+        bottom: 10%;
+        left: 5%;
+
+    }
+
+    .blockchain-2 {
+        position: absolute;
+        width: 180px !important;
+        top: -20%;
+        right: 2%;
+    }
+
+
+    /*Downloads Images */
+
+    .download-1,
+    .download-2 {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        width: 200px !important;
+        bottom: 7%;
+    }
+
+    .download-1 {
+        position: absolute;
+        left: 1%;
+    }
+
+    .download-2 {
+        position: absolute;
+        right: 9%;
+    }
+
+    .label {
+        position: absolute;
+        width: 160px !important;
+        top: 1% !important;
+    }
+
+    /* Nasa Images */
+    .nasa-1 {
+        position: absolute;
+        width: 200px !important;
+        left: 5%;
+    }
+
+    .nasa-2 {
+        position: absolute;
+        width: 180px !important;
+        top: -30%;
+        right: 2%;
+    }
+        /* CTA SOON  */
+    #block-soon {
+        width: 120px;
+        height: 40px;
+        font-size: 0.9em;
+        background: #FF2BAB;
+        border-radius: 40px;
+        display: grid;
+        place-content: center;
+        font-weight: bold;
+        color: #ffffff;
+        margin-left: 10px;
+    }
+
+    #soon {
+        width: 120px;
+        height: 40px;
+        font-size: 0.9em;
+        background: #DADAD9;
+        border-radius: 40px;
+        display: grid;
+        place-content: center;
+        font-weight: bold;
+        color: #17263C;
+        margin-left: 10px;
+    }
+
+    /* UX Images  */
+    .ux-1 {
+        position: absolute;
+        width: 140px !important;
+        bottom: 10%;
+        left: 1%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .ux-2 {
+        position: absolute;
+        width: 120px !important;
+        left: 35%;
+        top: -1%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .ux-3 {
+        position: absolute;
+        width: 200px !important;
+        top: -15%;
+        left: 0;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .ux-4 {
+        position: absolute;
+        width: 90px !important;
+        top: -30%;
+        right: 5%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .ux-5 {
+        position: absolute;
+        width: 150px !important;
+        bottom: 10%;
+        right: 0;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .ux-6 {
+        position: absolute;
+        width: 150px !important;
+        bottom: 40%;
+        right: -10%;
+    }
+        /* Text Heading  */
+    .h1 {
+        position: absolute;
+        width: 120px !important;
+        ;
+        bottom: 5%;
+        left: 1%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .h2 {
+        position: absolute;
+        width: 120px !important;
+        top: -50%;
+        left: 1%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .h3 {
+        position: absolute;
+        width: 120px !important;
+        bottom: -40%;
+        left: 35%;
+        z-index: 250 !important;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .h4 {
+        position: absolute;
+        width: 140px !important;
+        bottom: 0%;
+        right: -10% !important;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    .h5 {
+        position: absolute;
+        top: -10%;
+        left: 35%;
+        width: 120px !important;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+    }
+
+    /* Headline images  */
+
+    .headline-images {
+        visibility: visible !important;
+    }
+
+    .headline-1 {
+        width: 100%;
+        height: 100%;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important
+    }
+
+      /* Mobile Background Color Change  */
+    .item1 .right {
+        background-color: #01B76A;
+    }
+
+    .item1 .left {
+        background-color: #01824D;
+    }
+
+    .item2 .right {
+        background-color: #1D0363';
+
+    }
+
+    .item2 .left {
+        background-color: #4E27CE;
+    }
+
+    .item3 .right {
+        background-color: #E9ECF3;
+    }
+
+    .item3 .left {
+        background-color: #6211A7;
+    }
+
+    .item4 .right {
+        background-color: #0E131C;
+    }
+
+    .item4 .left {
+        background-color: #17263C;
+    }
+
+    .item5 .right {
+        background-color: #0E131C;
+    }
+
+    .item5 .left {
+        background-color: #17263C;
+    }
+
+    .item6 .right {
+        background-color: #DADAD9;
+    }
+
+    .item6 .left {
+        background-color: #022B92;
+    }
+
+    .item7 .right {
+        background-color: #2ECDDA;
+    }
+
+    .item7 .left {
+        background-color: #134CA2;
+    }
+
+    #paths {
+        display: none;
+    }
+
+    .p-width {
+        font-size: 0.7em;
+    }
+}
