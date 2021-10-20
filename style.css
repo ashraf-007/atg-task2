@@ -1,3 +1,6 @@
+/* Mobile width : 375px */
+/* Desktop MAX Width : 1440px */
+
 * {
     padding: 0;
     margin: 0;
@@ -340,8 +343,9 @@ h1 {
     .ux-images,
     .nasa-images,
     .blockchain-images,
-    .downloads-images {
-        visibility: visible;
+    .downloads-images,
+    .headline-images {
+        visibility: visible !important;
 
     }
 /* East asia images  */
