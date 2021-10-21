@@ -9,13 +9,14 @@ const rightSection = document.getElementById('right')
 const svg = document.getElementById('svg')
 const pathTexts = document.getElementsByClassName('path-text')
 const progressRing = document.getElementById('Opaque_Ring')
-const leftParagraph = document.getElementsByClassName('p-width')[0]
+const leftParagraph = document.getElementsByClassName('p-width')
 const lHeading = document.getElementById('left-heading')
 const dots = document.getElementsByClassName('dots-nav')
 const rightImages = document.getElementById('right-image')
 const nasaImage = document.getElementById('nasa-image')
 const cta = document.getElementById('cta')
-
+const mainLabel = document.getElementsByClassName('mainLabel')[0]
+console.log('lab',mainLabel)
 const percentage = 1000 / 7
 const elements = [{
     id: 1,
@@ -168,8 +169,8 @@ function handleStrokeDistance() {
 
 
 // BlockChain animation assets
-let blockchain1 = document.getElementsByClassName('blockchain-1')[0]
-let blockchain2 = document.getElementsByClassName('blockchain-2')[0]
+let blockchain1 = document.getElementsByClassName('blockchain-1')
+let blockchain2 = document.getElementsByClassName('blockchain-2')
 let tweenBlock1 = gsap.fromTo(blockchain1, {
   y: 300,
   opacity: 0
@@ -190,8 +191,8 @@ let tweenBlock2 = gsap.fromTo(blockchain2, {
 })
 
 // Nasa Images Animation assets
-const nasa1 = document.getElementsByClassName('nasa-1')[0]
-const nasa2 = document.getElementsByClassName('nasa-2')[0]
+const nasa1 = document.getElementsByClassName('nasa-1')
+const nasa2 = document.getElementsByClassName('nasa-2')
 let tweenNasa1 = gsap.fromTo(nasa1, {
   y: 300,
   opacity: 0
@@ -212,9 +213,9 @@ let tweenNasa2 = gsap.fromTo(nasa2, {
 })
 
 // East Asia Animation assets
-const east1 = document.getElementsByClassName('east-1')[0]
-const east2 = document.getElementsByClassName('east-2')[0]
-let tweenEast = gsap.fromTo([east1, east2], {
+const east1 = document.getElementsByClassName('east-1')
+const east2 = document.getElementsByClassName('east-2')
+let tweenEast = gsap.fromTo([east1, east2 , mainLabel], {
   y: 300,
   opacity: 0
 }, {
@@ -420,7 +421,8 @@ function handleInsertElementsAndAnimations(e) {
       if (i == 1) {
         elMainTitle.innerHTML = `<img id='nasa-image' src="./assets/nasa-mobile-app.png" alt="">`
 
-      } else {
+      }else{ 
+
         // Injecting Dom Elements + Background Animations
         elTitle.innerText = elements[i].title
         elDesc.innerText = elements[i].desc
@@ -444,7 +446,7 @@ function handleInsertElementsAndAnimations(e) {
 
       // Stagger Left Elements Animation
       if (windowSize === true) {
-        TweenMax.fromTo(els, {
+        gsap.fromTo(els, {
           y: -70,
           stagger: 0.05,
           ease: 'power1'
@@ -502,7 +504,7 @@ function handleInsertElementsAndAnimations(e) {
 
       //Stagger Left Elements
       if (windowSize === true) {
-        TweenMax.fromTo(els, {
+        gsap.fromTo(els, {
           y: 70,
           stagger: 0.05,
           ease: 'power1'
@@ -522,6 +524,8 @@ function handleInsertElementsAndAnimations(e) {
       })
     }
   }
+  mainLabel.style.display = i == 2 ? 'block' : 'none'
+
 }
 
 
@@ -530,7 +534,6 @@ window.addEventListener('load', handleImageSwitch)
 
 // Activating Owl Carousel 
 $('.owl-carousel').owlCarousel({
-  // margin:10,
   nav: true,
   items: 1,
 })
@@ -538,7 +541,8 @@ $('.owl-carousel').owlCarousel({
 window.addEventListener('resize', () => {
   if (window.innerWidth > 600) {
     windowSize = true
-  } else {
+  } 
+  if(window.innerWidth <= 600) {
     windowSize = false
   }
 

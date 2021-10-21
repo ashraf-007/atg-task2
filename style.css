@@ -36,7 +36,7 @@ main {
 }
 
 #mobile {
-    display: none;
+    display: none !important;
 }
 
 /***** Left Elements *****/
@@ -63,6 +63,14 @@ h1 {
     width: 70%;
     font-weight: 300;
     font-size: 0.8em;
+
+}
+.mainLabel{
+    position: absolute;
+    top: 40%;
+    width: 220px;
+    display: none;
+
 }
 
 #action {
@@ -325,17 +333,20 @@ h1 {
     }
 
     #hideDesktop {
-        display: none;
+        display: none!important;
     }
 
     #mobile {
-        display: block;
+        display: block!important;
     }
 
     #right-image {
         height: 100%;
         width: 100%;
-        position: relative;
+        position: relative!important;
+    }
+    #paths {
+        display: none;
     }
 
     .east-asia-images,
@@ -354,6 +365,9 @@ h1 {
         width: 200px !important;
         bottom: 12%;
         left: 5%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
 
     .east-2 {
@@ -361,6 +375,9 @@ h1 {
         width: 150px !important;
         bottom: 12%;
         left: 50%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
 
 
@@ -372,6 +389,9 @@ h1 {
         width: 180px !important;
         bottom: 10%;
         left: 5%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
 
     }
 
@@ -380,6 +400,9 @@ h1 {
         width: 180px !important;
         top: -20%;
         right: 2%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
 
 
@@ -387,19 +410,22 @@ h1 {
 
     .download-1,
     .download-2 {
+        display: block;
         opacity: 1 !important;
         transform: translateY(0) !important;
         width: 200px !important;
         bottom: 7%;
+        z-index: inherit !important;
+        visibility: visible !important;
     }
 
     .download-1 {
-        position: absolute;
+        position: absolute!important;
         left: 1%;
     }
 
     .download-2 {
-        position: absolute;
+        position: absolute!important;
         right: 9%;
     }
 
@@ -416,6 +442,9 @@ h1 {
         position: absolute;
         width: 200px !important;
         left: 5%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
 
     .nasa-2 {
@@ -423,6 +452,9 @@ h1 {
         width: 180px !important;
         top: -30%;
         right: 2%;
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
         /* CTA SOON  */
     #block-soon {
@@ -455,10 +487,11 @@ h1 {
     .ux-1 {
         position: absolute;
         width: 140px !important;
-        bottom: 10%;
+        bottom: 0%;
         left: 1%;
         opacity: 1 !important;
-        transform: translate(0px, 0px) !important;
+        transform: translateY(0px) !important;
+        visibility: visible !important;
     }
 
     .ux-2 {
@@ -468,6 +501,8 @@ h1 {
         top: -1%;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .ux-3 {
@@ -477,6 +512,8 @@ h1 {
         left: 0;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .ux-4 {
@@ -486,6 +523,8 @@ h1 {
         right: 5%;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .ux-5 {
@@ -495,6 +534,8 @@ h1 {
         right: 0;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .ux-6 {
@@ -502,16 +543,21 @@ h1 {
         width: 150px !important;
         bottom: 40%;
         right: -10%;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translate(0px, 0px) !important;
+
     }
         /* Text Heading  */
     .h1 {
         position: absolute;
         width: 120px !important;
-        ;
         bottom: 5%;
         left: 1%;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .h2 {
@@ -521,6 +567,8 @@ h1 {
         left: 1%;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .h3 {
@@ -530,6 +578,8 @@ h1 {
         left: 35%;
         z-index: 250 !important;
         opacity: 1 !important;
+        visibility: visible !important;
+
         transform: translate(0px, 0px) !important;
     }
 
@@ -540,6 +590,8 @@ h1 {
         right: -10% !important;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     .h5 {
@@ -549,6 +601,8 @@ h1 {
         width: 120px !important;
         opacity: 1 !important;
         transform: translate(0px, 0px) !important;
+        visibility: visible !important;
+
     }
 
     /* Headline images  */
@@ -561,7 +615,8 @@ h1 {
         width: 100%;
         height: 100%;
         opacity: 1 !important;
-        transform: translate(0px, 0px) !important
+        transform: translate(0px, 0px) !important;
+        visibility: visible!important;
     }
 
       /* Mobile Background Color Change  */
@@ -622,10 +677,7 @@ h1 {
         background-color: #134CA2;
     }
 
-    #paths {
-        display: none;
-    }
-
+   
     .p-width {
         font-size: 0.7em;
     }
