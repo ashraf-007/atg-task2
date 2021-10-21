@@ -405,8 +405,10 @@ h1 {
 
     .label {
         position: absolute;
-        width: 160px !important;
-        top: 1% !important;
+        width: 200px !important;
+        top: 45% !important;
+        left: 5%;
+        z-index: 300 !important;
     }
 
     /* Nasa Images */
