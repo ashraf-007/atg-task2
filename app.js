@@ -21,7 +21,7 @@ const percentage = 1000 / 7
 const elements = [{
     id: 1,
     title: 'The Next Big',
-    mainTitle: 'BlockChain',
+    mainTitle: 'BLOCKCHAIN',
     desc: 'Revolution',
     leftColor: '#4E27CE',
     rightColor: '#1D0363',
