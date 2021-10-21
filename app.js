@@ -16,7 +16,9 @@ const rightImages = document.getElementById('right-image')
 const nasaImage = document.getElementById('nasa-image')
 const cta = document.getElementById('cta')
 const mainLabel = document.getElementsByClassName('mainLabel')[0]
-console.log('lab',mainLabel)
+const bar = document.getElementsByClassName('scroll-bar')[0]
+const barContainer = document.getElementById('scroll-container')
+
 const percentage = 1000 / 7
 const elements = [{
     id: 1,
@@ -107,11 +109,13 @@ const elements = [{
 ]
 const pWidth = document.getElementsByClassName('p-width')
 const els = [elTitle, elDesc, elMainTitle, pWidth, leftParagraph, lHeading]
-
 let i = 0
 let windowSize = true
 
 window.addEventListener('wheel', (e) => {
+
+  //Hnadle Show and Hide Function
+  handleBarShowOnScroll()
   // Handle Insert Elements and Animations
   handleInsertElementsAndAnimations(e)
 
@@ -125,6 +129,10 @@ window.addEventListener('wheel', (e) => {
   if (windowSize) {
     handleImageSwitch()
   }
+
+  //Handle Scroll Bar Function
+  handleScrollBar()
+
 })
 
 // Dots Opacity Function 
@@ -165,7 +173,6 @@ function handleStrokeDistance() {
       break
   }
 }
-
 
 
 // BlockChain animation assets
@@ -346,6 +353,7 @@ function handleImageSwitch() {
       tweenDown.reverse()
       tweenUp.reverse()
       tweenToLeft.reverse()
+      distance = '0vh'
       break;
 
     case 1:
@@ -354,6 +362,8 @@ function handleImageSwitch() {
       tweenNasa1.play().duration(0.6)
       tweenNasa2.play().duration(0.6)
       tweenEast.reverse().duration(0.2)
+      distance = '15vh'
+
       break;
 
     case 2:
@@ -362,6 +372,8 @@ function handleImageSwitch() {
       tweenEast.play().duration(0.6)
       tweenDownload1.reverse().duration(0.01)
       tweenDownload2.reverse().duration(0.01)
+      distance = '29vh'
+
       break;
 
     case 3:
@@ -371,6 +383,8 @@ function handleImageSwitch() {
       tweenUxToRight.reverse().duration(0.2)
       tweenUxUp.reverse().duration(0.2)
       tweenUxDown.reverse().duration(0.2)
+      distance = '43vh'
+
       break
     case 4:
       tweenUxToRight.play().duration(0.6)
@@ -379,6 +393,8 @@ function handleImageSwitch() {
       tweenDownload1.reverse().duration(0.2)
       tweenDownload2.reverse().duration(0.2)
       tweenFourniture.reverse().duration(0.2)
+      distance = '57vh'
+
       break;
 
     case 5:
@@ -389,6 +405,7 @@ function handleImageSwitch() {
       tweenDown.reverse().duration(0.2)
       tweenUp.reverse().duration(0.2)
       tweenToLeft.reverse().duration(0.2)
+      distance = '73vh'
 
       break;
     case 6:
@@ -397,6 +414,7 @@ function handleImageSwitch() {
       tweenToLeft.play().duration(0.6)
 
       tweenFourniture.reverse().duration(0.2)
+      distance = '86vh'
 
     default:
       return i
@@ -406,11 +424,13 @@ function handleImageSwitch() {
 
 // Insert DOM elements and Animations Function 
 function handleInsertElementsAndAnimations(e) {
+  // handleBarDown()
 
   // Check Mouse event and window Size
   if (e.deltaY === 100 && windowSize === true) {
     // Event for mouse + 
     i++
+
     // Check i limit
     if (i >= elements.length) {
       i = elements.length - 1
@@ -525,7 +545,6 @@ function handleInsertElementsAndAnimations(e) {
     }
   }
   mainLabel.style.display = i == 2 ? 'block' : 'none'
-
 }
 
 
@@ -547,3 +566,23 @@ window.addEventListener('resize', () => {
   }
 
 })
+// Scoll Bar Function Animation
+function handleScrollBar(){
+  gsap.to(bar , { y: distance  , opacity:1 , ease : 'power2' })
+}
+
+//Show and Hide Bar Function and Logic
+function handleBarShowOnScroll(){
+  let showHideBar = gsap.fromTo(barContainer,{ opacity: 0} ,{ opacity :1 })
+
+  setTimeout(() => {
+    showHideBar.reverse()
+  }, 2500);
+
+  barContainer.addEventListener('mouseover', (e)=>{
+      showHideBar.play()
+  })
+  barContainer.addEventListener('mouseleave', (e)=>{
+    showHideBar.reverse()
+})
+}

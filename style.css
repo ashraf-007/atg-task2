@@ -15,7 +15,27 @@ body {
     color: white;
 
 }
+#scroll-container{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50px;
+    z-index:10000;
+    opacity: 0;
+}
+/* #scroll-container:hover{
+  opacity: 1;
 
+} */
+.scroll-bar{
+    position: absolute;
+    border-radius: 5px 0 0 5px;
+    right: 0;
+    height: 14vh;
+    background-color: #17263C;
+    width: 9px;
+    z-index:10000;
+}
 button {
     width: 100px;
     height: 50px;
