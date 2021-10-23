@@ -18,6 +18,7 @@ const cta = document.getElementById('cta')
 const mainLabel = document.getElementsByClassName('mainLabel')[0]
 const bar = document.getElementsByClassName('scroll-bar')[0]
 const barContainer = document.getElementById('scroll-container')
+let owl = $('.owl-carousel');
 
 const percentage = 1000 / 7
 const elements = [{
@@ -132,6 +133,8 @@ window.addEventListener('wheel', (e) => {
 
   //Handle Scroll Bar Function
   handleScrollBar()
+  // handleSlideScroll
+  handleSlideScroll(e)
 
 })
 
@@ -429,6 +432,7 @@ function handleInsertElementsAndAnimations(e) {
   // Check Mouse event and window Size
   if (e.deltaY === 100 && windowSize === true) {
     // Event for mouse + 
+
     i++
 
     // Check i limit
@@ -488,7 +492,7 @@ function handleInsertElementsAndAnimations(e) {
   }
 
   if (e.deltaY === -100) {
-    // Event for mouse -
+  // Event for mouse -
     i--
     // Check i limit
     if (i < 0) {
@@ -552,10 +556,22 @@ function handleInsertElementsAndAnimations(e) {
 window.addEventListener('load', handleImageSwitch)
 
 // Activating Owl Carousel 
-$('.owl-carousel').owlCarousel({
-  nav: true,
+owl.owlCarousel({
+  nav:true,
   items: 1,
+  dots: true,
+  // mouseDrag:true
 })
+function handleSlideScroll(e){
+  if(e.deltaY === 100){
+    owl.trigger('next.owl.carousel');
+    return
+  }
+  if(e.deltaY === -100){
+    owl.trigger('prev.owl.carousel');
+    return;
+  }
+}
 // Handle Window Sizing 
 window.addEventListener('resize', () => {
   if (window.innerWidth > 600) {

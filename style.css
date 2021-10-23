@@ -701,4 +701,8 @@ h1 {
     .p-width {
         font-size: 0.7em;
     }
+    .p{
+        font-size: 12px;
+        width: 80%;
+    }
 }
